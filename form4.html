@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question 4</title>
+	<script type="text/javascript">
+	function checkMessage(){
+		var message =document.getElementById('msg').value;
+	     if(message.length<15)
+	     {
+	        document.getElementById('errormsg').innerHTML="Your message text should be greater than 15 characters";  
+	     }
+	}
+	function checkWebSite(){
+		var url =document.getElementById('website').value;
+	     if(isValidUrl(url))
+	     {
+	        document.getElementById('errorwebsite').innerHTML="Valid Website"+url;  
+	     }       	 
+	     
+	}
+	function chechEmail(){
+		var email = document.getElementById("email").value;
+		
+	}
+	function checkName(){
+		var name =document.getElementById('name').value;
+		if (name=='') {
+			document.getElementById('errorname').innerHTML="Enter name";
+		}
+	}	
+	</script>
+	<style type="text/css">
+	.firstdiv
+    {
+        width: 750px;
+        height: 300px;
+    }
+    </style>
+    
+</head>
+<body >
+	<form name="form1">
+		<div class="firstdiv" >
+			<h1>Form Here</h1>
+			<p style="color: red;">* required fields</p><hr/>
+					<label>Name:</label>
+					<input type="text" name="name" id="name" onblur="checkName();" placeholder="Enter name">
+						<span style=" color: #FFFFFF; background-color: red;" id="errorname" ></span><br/><br/>
+
+					<label>Email:</label>
+					<input type="email" name="email" id="email" onblur="checkEmail();"  placeholder="Enter email" />
+						<span style=" color: red;" id="erroremail" ></span><br/><br/>
+
+					<label>Website:</label>
+					<input type="website" name="website" id="website" onblur="checkWebSite();" placeholder="Enter website" required="" >
+						<span style=" color: red;" id="errorwebsite" ></span><br/><br/>	
+					
+					<label for="msg">Message:</label>
+					<textarea  id="msg" name="msg" rows="4" cols="30"  placeholder=" Enter Message here..."></textarea><br/><br/>
+					<span style=" color: red;" id="errormsg" ></span><br/><br/>	
+					<input type="button" value="Submit"  onclick="checkMessage();"/>				
+		</div>
+	</form>
+
+</body>
+</html>
