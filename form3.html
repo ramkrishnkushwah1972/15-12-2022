@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question 3</title>
+	<script type="text/javascript">
+	function checkPsw(){
+		var psw =parseInt(document.getElementById('password').value);
+		var cpsw =parseInt(document.getElementById('cpassword').value);
+		if (psw!=cpassword) {
+			document.getElementById('checkpassword').innerHTML="Password and Confirm Password not Mached!";
+		}
+	}	
+	function check(){
+		var fname =document.getElementById('fname').value;
+	     if(fname=='')
+	     {
+	        document.getElementById('errorfirstname').innerHTML="Please enter your first name!";  
+	     }  	 
+	     
+	     var lname =document.getElementById('lname').value;
+	     if(lname=='')
+	     {
+	        document.getElementById('errorlastname').innerHTML="Please enter your last name!";  
+	     }
+	     var email =document.getElementById('email').value;
+	     if(email==''){
+	        document.getElementById('erroremail').innerHTML="Please enter email!";  
+	     }
+	     var uid =document.getElementById('uid').value;
+	     if(uid==''){
+	        document.getElementById('erroruid').innerHTML="Please enter user id!";  
+	     }  	 
+	     var psw =document.getElementById('password').value;
+	     if(psw==''){
+	        document.getElementById('errorpassword').innerHTML="Please enter password!";  
+	     }
+	     var cpsw =document.getElementById('cpassword').value;
+	     if(cpsw==''){
+	        document.getElementById('errorcpassword').innerHTML="Please enter confirm password!";  
+	     }
+	}
+	</script>
+	<style type="text/css">
+	.firstdiv
+    {
+        width: 750px;
+        height: 300px;
+        /*text-align: right;*/
+    }
+    .firstdiv input{
+     		/*float: right;	*/
+     		/*margin-right:10px;*/
+    }
+    </style>
+    
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>Registration</legend>
+				<div class="firstdiv" >
+					<label>First Name:</label>
+					<input type="text" name="fname" id="fname" onblur="check();" placeholder="Enter first name">
+						<span style=" color: red;" id="errorfirstname" ></span><br/><br/>
+					<label>Last Name:</label>
+					<input type="text" name="lname" id="lname" onblur="check();" placeholder="Enter last name"  >
+						<span style=" color: red;" id="errorlastname" ></span><br/><br/>
+					<label>Email:</label>
+					<input type="email" name="email" id="email" onblur="check();"  placeholder="Enter your email" required>
+						<span style=" color: red;" id="erroremail" ></span><br/><br/>
+					<label>User Id:</label>
+					<input type="text" name="user_id" id="uid" onblur="check();" placeholder="Enter user id" >
+						<span style=" color: red;" id="erroruid" ></span><br/><br/>
+					<label>Password:</label>
+					<input type="password" name="password" id="password" onblur="check();" placeholder="Enter password" >
+						<span style=" color: red;" id="errorpassword" ></span><br/><br/>
+					<label>Confirm Password:</label>
+					<input type="password" name="confirm_password" id="cpassword" onblur="check();" placeholder="Enter confirm password" >
+						<span style=" color: red;" id="errorcpassword" ></span><br/><br/>
+						<span style=" color: red;" id="checkpassword" ></span><br/><br/>
+
+					<input type="button" value="Create" onclick="checkPsw();">
+				</div>
+		</fieldset>
+	</form>
+
+</body>
+</html>

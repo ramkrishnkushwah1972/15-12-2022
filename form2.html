@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Question 2</title>
+		<style type="text/css">
+			.Button-design{
+				background-color: #70e03d;
+				width:15%;
+				top: 20px;
+				font-size: 20px;
+				/*box-shadow: 10px 5px 5px black;*/
+				box-shadow: 3px 3px red, 1em 0 0.4em olive;
+			}
+			b{
+				padding: 15px;
+			}
+		</style>
+		<script>
+			function find() {
+				// var n = parseInt(document.getElementById("number").value);
+				var ch = document.getElementById("number").value;
+				
+				if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+					document.getElementById("result").innerHTML = "<b style='color:red'>"+ch+" is a vowel</b>";
+				else if(ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U') {
+					document.getElementById("result").innerHTML = "<b style='color:red'>"+ch+" is a vowel</b>";
+				}
+				else if(ch=='1' || ch=='2' || ch=='3' || ch=='4' || ch=='5'|| ch=='6'|| ch=='7'|| ch=='8'|| ch=='9'|| ch=='0') {
+					document.getElementById("result").innerHTML = "<b style='color:red'>"+ch+" is a number</b>";
+				}
+				else
+					document.getElementById("result").innerHTML = "<b style='color:red'>"+ch+" is a consonant</b>";
+			}
+		</script>
+	</head>
+	
+	<body>
+		<form>
+			<fieldset>
+				<legend>Vowel or Consonant</legend>
+					Character: <input type="text" id="number" />
+					<br/>
+					<br/>
+					<input type="button" value="Ckeck" onclick="find();">
+					<!-- <button onclick="find();">Find</button> -->
+					<br/>
+					<br/>
+					<div id="result" class="Button-design"></div>
+			</fieldset>
+		</form>	
+		
+	</body>
+
+</html>

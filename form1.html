@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Question 1</title>
+		<style type="text/css">
+			.Button-design{
+				background-color: #FFFFFF;
+				width:15%;
+				top: 20px;
+				font-size: 17px;
+				box-shadow: 10px 5px 5px black;
+			}
+			b{
+				padding: 15px;
+			}
+		</style>
+		<script>
+			function find() {
+				var n = parseInt(document.getElementById("number").value);
+				
+				if(isNaN(n))
+					document.getElementById("result").innerHTML = "<b style='color:red'>Please enter a number!</b>";
+				else if(n<=0) {
+					document.getElementById("result").innerHTML = "<b style='color:red'>You must enter a number greater than 0 </b>";
+				}
+				else if(n%2==0)
+					document.getElementById("result").innerHTML = "<b style='color:green'>"+ n +" is an even number.</b>";
+				else	
+					document.getElementById("result").innerHTML = "<b style='color:green'>"+ n +" is an odd number.</b>";
+				
+				return false;
+			}
+				function myFunction() {
+				  document.getElementById("demo").innerHTML = "Hello World";
+				}
+		</script>
+	</head>
+	
+	<body>
+		<form>
+			<fieldset>
+				<legend> Even or Odd</legend>
+					Number: <input type="number" id="number" />
+					<br/>
+					<br/>
+					<input type="button" value="Find" onclick="find();">
+					<!-- <button onclick="find();">Find</button> -->
+					<br/>
+					<br/>
+					<div id="result" class="Button-design"></div>
+			</fieldset>
+		</form>	
+		
+	</body>
+
+</html>
